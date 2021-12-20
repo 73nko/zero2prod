@@ -8,8 +8,11 @@ struct FormData {
     name: String,
 }
 
+
 async fn health_check() -> HttpResponse {
-    HttpResponse::Ok().finish()
+    HttpResponse::Ok()
+        .content_type("text/plain")
+        .body("Hello world")
 }
 
 async fn subscribe(_form: web::Form<FormData>) -> HttpResponse {

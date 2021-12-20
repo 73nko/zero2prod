@@ -20,7 +20,7 @@ async fn health_check_works() {
         .expect("Failed to execute request");
 
     assert!(response.status().is_success());
-    assert_eq!(Some(0), response.content_length());
+    assert_eq!(Some(String::from("Hello world")), response.text().await.ok());
 }
 
 #[actix_rt::test]
