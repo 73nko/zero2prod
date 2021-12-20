@@ -8,7 +8,6 @@ struct FormData {
     name: String,
 }
 
-
 async fn health_check() -> HttpResponse {
     HttpResponse::Ok()
         .content_type("text/plain")
